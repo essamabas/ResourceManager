@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row grid-container">
+        <div class="col-md-10">
+            <div class="table">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th sort-by="firstName" (sorted)="sort($event)">First Name</th>
+                            <th sort-by="lastName" (sorted)="sort($event)">Last Name</th>
+                            <th sort-by="address" (sorted)="sort($event)">Address</th>
+                            <th sort-by="city" (sorted)="sort($event)">City</th>
+                            <th sort-by="state.name" (sorted)="sort($event)">State</th>
+                            <!-- Or you can do this directly rather than using sort-by directive -->
+                            <th (click)="sort('taskTotal')">Task Total</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let employee of employees;trackBy:trackby.employee">
+                            <td><img src="images/{{ employee.gender | lowercase }}.png"
+                                    class="card-image" alt="Employee Image" /></td>
+                            <td><a [routerLink]="['/employees',employee.id,'details']">{{ employee.firstName | capitalize }}</a></td>
+                            <td>{{ employee.lastName | capitalize }}</td>
+                            <td>{{ employee.address }}</td>
+                            <td>{{ employee.city | trim }}</td>
+                            <td>{{ employee.state.name }}</td>
+                            <td>{{ employee.taskTotal | currency:'USD':true }}</td>
+                            <td><a [routerLink]="['/employees',employee.id,'tasks']">View Tasks</a></td>
+                        </tr>
+                        <tr *ngIf="!employees.length">
+                            <td>&nbsp;</td>
+                            <td colspan="6">No Records Found</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
