@@ -8,4 +8,4 @@ import { employeeRouting } from './employee.routing';
   imports:      [ CommonModule, employeeRouting.routes, SharedModule ],
   declarations: [ employeeRouting.components ]
 })
-export default class AppModule { }
+export class EmployeeModule { }
