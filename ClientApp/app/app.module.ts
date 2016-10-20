@@ -19,15 +19,15 @@ import { app_routing } from './app.routing';
         AppComponent,
         NavMenuComponent,
         CounterComponent,
-        FetchDataComponent
+        FetchDataComponent,
+        HomeComponent
     ],
     imports: [
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
         app_routing,
-        EmployeesModule,
+        //EmployeesModule,
         CoreModule,
-        SharedModule,
-        HomeComponent
+        SharedModule
     ]
 })
 export class AppModule {
