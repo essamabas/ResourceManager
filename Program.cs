@@ -23,6 +23,7 @@ namespace ResourceManager
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseUrls("http://0.0.0.0:5001/")
                 .Build();
 
             host.Run();
