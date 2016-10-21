@@ -3,8 +3,8 @@
     <br />
     <table class="table table-striped table-hover tasks-table" *ngFor="let task of filteredTasks;trackBy:taskTrackBy">
         <tr *ngFor="let taskItem of task.taskItems;trackBy:taskItemTrackBy">
-            <td>{{taskItem.productName}}</td>
-            <td>${{taskItem.itemCost}}</td>    
+            <td>{{taskItem.title}}</td>
+            <td>${{taskItem.duration}}</td>    
         </tr>
     </table>
 </div>

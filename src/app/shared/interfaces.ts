@@ -8,7 +8,7 @@ export interface IEmployee {
     address: string;
     city: string;
     state: IState;
-    orderTotal?: number;
+    tasksTotal?: number;
 }
 
 export interface IState {
