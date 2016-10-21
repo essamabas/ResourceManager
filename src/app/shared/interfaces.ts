@@ -1,6 +1,6 @@
 import { ModuleWithProviders } from '@angular/core';
 
-export interface ICustomer {
+export interface IEmployee {
     id: number;
     firstName: string;
     lastName: string;
@@ -16,15 +16,16 @@ export interface IState {
     name: string;
 }
 
-export interface IOrder {
-    customerId: number;
-    orderItems: IOrderItem[];
+export interface ITask {
+    employeeId: number;
+    taskItems: ITaskItem[];
 }
 
-export interface IOrderItem {
+export interface ITaskItem {
     id: number;
-    productName: string;
-    itemCost: number;
+    title: string;
+    description?: string;
+    duration: number;
 }
 
 export interface IRouting {

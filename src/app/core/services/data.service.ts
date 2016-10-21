@@ -8,42 +8,42 @@ import { Observer } from 'rxjs/Observer';
 import 'rxjs/add/operator/map'; 
 import 'rxjs/add/operator/catch';
 
-import { ICustomer, IOrder, IState } from '../../shared/interfaces';
+import { IEmployee, ITask, IState } from '../../shared/interfaces';
 
 @Injectable()
 export class DataService {
   
-    customersBaseUrl: string = '/api/customers';
-    ordersBaseUrl: string = '/api/orders';
-    customers: ICustomer[];
-    orders: IOrder[];
+    employeesBaseUrl: string = '/api/employees';
+    tasksBaseUrl: string = '/api/tasks';
+    employees: IEmployee[];
+    tasks: ITask[];
     states: IState[];
 
     constructor(private http: Http) { }
     
-    getCustomers() : Observable<ICustomer[]> {
-        return this.http.get(this.customersBaseUrl)
+    getEmployees() : Observable<IEmployee[]> {
+        return this.http.get(this.employeesBaseUrl)
                     .map((res: Response) => {
-                        this.customers = res.json();
-                        return this.customers;
+                        this.employees = res.json();
+                        return this.employees;
                     })
                     .catch(this.handleError);
     }
     
-    getCustomer(id: number) : Observable<ICustomer> {
-        return this.http.get(this.customersBaseUrl + '/' + id)
+    getEmployee(id: number) : Observable<IEmployee> {
+        return this.http.get(this.employeesBaseUrl + '/' + id)
                     .map((res: Response) => res.json())
                     .catch(this.handleError);
     }
 
-    getOrders(id: number) : Observable<IOrder[]> {
-      return this.http.get(this.ordersBaseUrl + '/' + id)
+    getTasks(id: number) : Observable<ITask[]> {
+      return this.http.get(this.tasksBaseUrl + '/' + id)
                 .map((res: Response) => res.json())
                 .catch(this.handleError);               
     }
     
-    updateCustomer(customer: ICustomer) : Observable<boolean> {
-        return this.http.put(this.customersBaseUrl + '/' + customer.id, customer)
+    updateEmployee(employee: IEmployee) : Observable<boolean> {
+        return this.http.put(this.employeesBaseUrl + '/' + employee.id, employee)
                    .map((res: Response) => res.json())
                    .catch(this.handleError);  
     }
@@ -71,12 +71,12 @@ export class DataService {
     //Not using now but leaving since they show how to create
     //and work with custom observables
 
-    private findCustomerObservable(id: number) : Observable<ICustomer> {        
-        return this.createObservable(this.filterCustomers(id));
+    private findEmployeeObservable(id: number) : Observable<IEmployee> {        
+        return this.createObservable(this.filterEmployees(id));
     }
     
-    private filterCustomers(id: number) : ICustomer {
-        const custs = this.customers.filter((cust) => cust.id === id);
+    private filterEmployees(id: number) : IEmployee {
+        const custs = this.employees.filter((cust) => cust.id === id);
         return (custs.length) ? custs[0] : null;
     }
     

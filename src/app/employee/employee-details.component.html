@@ -1,0 +1,19 @@
+<div *ngIf="employee">
+  <div class="row">
+    <div class="col-md-1">
+      <img src="images/{{employee.gender | lowercase}}.png" class="card-image" />
+    </div>
+    <div class="col-md-11">
+      <h4>    
+          {{ employee.firstName | capitalize }} {{ employee.lastName | capitalize }}&nbsp;          
+      </h4>
+      <br />
+      {{ employee.address }}
+      <br />
+      {{ employee.city }}, {{ employee.state.name }}
+    </div>
+  </div>    
+</div>   
+<div *ngIf="!employee" class="row">
+   No employee found
+</div>  

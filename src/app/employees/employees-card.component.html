@@ -1,12 +1,12 @@
 <div class="container">
     <div class="row card-container">
-        <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let customer of customers;trackBy:trackby.customer">
+        <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let employee of employees;trackBy:trackby.employee">
             <div class="card">
                 <div class="card-header">
-                    <a [routerLink]="['/customers',customer.id,'details']" class="white">
-                        {{customer.firstName | capitalize }} {{ customer.lastName | capitalize }} 
+                    <a [routerLink]="['/employees',employee.id,'details']" class="white">
+                        {{employee.firstName | capitalize }} {{ employee.lastName | capitalize }} 
                     </a>
-                    <a [routerLink]="['/customers',customer.id,'edit']">
+                    <a [routerLink]="['/employees',employee.id,'edit']">
                         <i title="Edit"  
                            class="pull-right glyphicon glyphicon-edit edit-icon white"></i>
                     </a>
@@ -15,18 +15,18 @@
                     <div class="clearfix">
                         <div class="pull-left card-body-left">
                             <a href="#" class="white">
-                                <img src="images/{{customer.gender | lowercase}}.png" class="card-image" />
+                                <img src="images/{{employee.gender | lowercase}}.png" class="card-image" />
                             </a>
                         </div>
                         <div class="pull-left card-body-right">
-                            <div class="card-body-content">{{customer.city | trim }}, {{customer.state.name}}</div>
-                            <a [routerLink]="['/customers',customer.id,'orders']">View Orders</a>
+                            <div class="card-body-content">{{employee.city | trim }}, {{employee.state.name}}</div>
+                            <a [routerLink]="['/employees',employee.id,'tasks']">View Tasks</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div *ngIf="!customers.length">
+        <div *ngIf="!employees.length">
             No Records Found
         </div>
     </div>

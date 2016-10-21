@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 
-import { ICustomer, IOrder } from '../../shared/interfaces';
+import { IEmployee, ITask } from '../../shared/interfaces';
 
 @Injectable()
 export class TrackByService {
   
-  customer(index:number, customer: ICustomer) {
-    return customer.id;
+  employee(index:number, employee: IEmployee) {
+    return employee.id;
   }
   
 }

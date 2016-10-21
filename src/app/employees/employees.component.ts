@@ -1,34 +1,35 @@
+
 import { Component, OnInit } from '@angular/core';
 //import { Observable } from 'rxjs/Observable';
 
 import { DataService } from '../core/services/data.service';
-import { ICustomer } from '../shared/interfaces';
+import { IEmployee } from '../shared/interfaces';
 import { propertyResolver } from '../shared/property-resolver';
 
 @Component({ 
   moduleId: module.id,
-  selector: 'customers', 
-  templateUrl: 'customers.component.html'
+  selector: 'employees', 
+  templateUrl: 'employees.component.html'
 })
-export class CustomersComponent implements OnInit {
+export class EmployeesComponent implements OnInit {
 
   title: string;
   filterText: string;
-  customers: ICustomer[] = [];
-  filteredCustomers: ICustomer[] = [];
+  employees: IEmployee[] = [];
+  filteredEmployees: IEmployee[] = [];
   displayMode: DisplayModeEnum;
   displayModeEnum = DisplayModeEnum;
 
   constructor(private dataService: DataService) { }
   
   ngOnInit() {
-    this.title = 'Customers';
-    this.filterText = 'Filter Customers:';
+    this.title = 'Employees';
+    this.filterText = 'Filter Employees:';
     this.displayMode = DisplayModeEnum.Card;
 
-    this.dataService.getCustomers()
-        .subscribe((customers: ICustomer[]) => {
-          this.customers = this.filteredCustomers = customers;
+    this.dataService.getEmployees()
+        .subscribe((employees: IEmployee[]) => {
+          this.employees = this.filteredEmployees = employees;
         });
 
   }
@@ -39,10 +40,10 @@ export class CustomersComponent implements OnInit {
 
 
   filterChanged(data: string) {
-    if (data && this.customers) {
+    if (data && this.employees) {
         data = data.toUpperCase();
-        let props = ['firstName', 'lastName', 'address', 'city', 'state.name', 'orderTotal'];
-        let filtered = this.customers.filter(item => {
+        let props = ['firstName', 'lastName', 'address', 'city', 'state.name', 'taskTotal'];
+        let filtered = this.employees.filter(item => {
             let match = false;
             for (let prop of props) {
                 if (prop.indexOf('.') > -1) {
@@ -62,10 +63,10 @@ export class CustomersComponent implements OnInit {
             };
             return match;
         });
-        this.filteredCustomers = filtered;
+        this.filteredEmployees = filtered;
     }
     else {
-      this.filteredCustomers = this.customers;
+      this.filteredEmployees = this.employees;
     }
   }
 }

@@ -1,0 +1,13 @@
+<div class="row" *ngIf="employee">
+    <h4>Tasks for {{ employee.firstName | capitalize }} {{ employee.lastName | capitalize }}</h4>
+    <br />
+    <table class="table table-striped table-hover tasks-table" *ngFor="let task of filteredTasks;trackBy:taskTrackBy">
+        <tr *ngFor="let taskItem of task.taskItems;trackBy:taskItemTrackBy">
+            <td>{{taskItem.productName}}</td>
+            <td>${{taskItem.itemCost}}</td>    
+        </tr>
+    </table>
+</div>
+<div *ngIf="!employee" class="row">
+   No employee found
+</div>  

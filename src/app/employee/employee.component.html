@@ -1,0 +1,45 @@
+<div class="tasks view">
+    <div class="container">
+        <header>
+            <h3><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Employee Information</h3>
+        </header>
+        <br />
+        <div class="navbar">
+            <ul class="nav navbar-nav">
+                <li class="toolbar-item">
+                    <a routerLink="details" 
+                       (click)="displayMode = displayModeEnum.Details" 
+                       [class.active]="displayMode === displayModeEnum.Details">
+                       <span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;Employee Details
+                    </a>
+                </li>
+                <li class="toolbar-item">
+                    <a routerLink="tasks"
+                       (click)="displayMode = displayModeEnum.Tasks" 
+                       [class.active]="displayMode === displayModeEnum.Tasks">
+                        <span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;Employee Tasks
+                    </a>
+                </li>
+                <li class="toolbar-item">
+                    <a routerLink="edit"
+                       (click)="displayMode = displayModeEnum.Edit" 
+                       [class.active]="displayMode === displayModeEnum.Edit">
+                        <span class="glyphicon glyphicon-edit edit-icon"></span>&nbsp;&nbsp;Edit Employee
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <router-outlet></router-outlet>
+            <br />
+            <br />
+            <a routerLink="/">View all Employees</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
