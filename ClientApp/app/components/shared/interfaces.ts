@@ -7,7 +7,7 @@ export interface IEmployee {
     gender: string;
     address: string;
     city: string;
-    state: IState;
+    //state: IState;
     orderTotal?: number;
 }
 

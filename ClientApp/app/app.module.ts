@@ -12,6 +12,7 @@ import { EmployeesModule } from './components/employees/employees.module';
 import { CoreModule } from './components/core/core.module';
 import { SharedModule } from './components/shared/shared.module';
 import { app_routing } from './app.routing';
+import {SampleModule} from './components/sample/sample.module';
 
 @NgModule({
     bootstrap: [ AppComponent ],
@@ -25,9 +26,10 @@ import { app_routing } from './app.routing';
     imports: [
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
         app_routing,
-        //EmployeesModule,
+        EmployeesModule,
         CoreModule,
-        SharedModule
+        SharedModule,
+        SampleModule
     ]
 })
 export class AppModule {

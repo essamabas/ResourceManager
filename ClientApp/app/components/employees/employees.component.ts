@@ -2,14 +2,15 @@
 import { Component, OnInit } from '@angular/core';
 //import { Observable } from 'rxjs/Observable';
 
-import { DataService } from '../core/services/data.service';
+//import { DataService } from '../core/services/data.service';
 import { IEmployee } from '../shared/interfaces';
 import { propertyResolver } from '../shared/property-resolver';
+import { Http } from '@angular/http';
 
 @Component({ 
-  moduleId: module.id,
+  //moduleId: module.id,
   selector: 'employees', 
-  templateUrl: 'employees.component.html'
+  template: require('./employees.component.html')
 })
 export class EmployeesComponent implements OnInit {
 
@@ -20,18 +21,25 @@ export class EmployeesComponent implements OnInit {
   displayMode: DisplayModeEnum;
   displayModeEnum = DisplayModeEnum;
 
-  constructor(private dataService: DataService) { }
+  constructor(http: Http) {
+      http.get('/api/employees').subscribe(result => {
+          this.employees = result.json();
+      });    
+   }
   
   ngOnInit() {
     this.title = 'Employees';
     this.filterText = 'Filter Employees:';
     this.displayMode = DisplayModeEnum.Card;
 
+
+
+    /*
     this.dataService.getEmployees()
         .subscribe((employees: IEmployee[]) => {
           this.employees = this.filteredEmployees = employees;
         });
-
+    */
   }
 
   changeDisplayMode(mode: DisplayModeEnum) {

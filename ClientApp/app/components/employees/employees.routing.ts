@@ -7,7 +7,7 @@ import { FilterTextboxComponent } from '../filterTextbox/filterTextbox.component
 import { IRouting } from '../shared/interfaces';
 
 const routes: Routes = [
-  { path: '', pathMatch:'full', redirectTo: '/employees' },
+  //{ path: '', pathMatch:'full', redirectTo: '/employees' },
   { path: 'employees', component: EmployeesComponent}
 ];
 
