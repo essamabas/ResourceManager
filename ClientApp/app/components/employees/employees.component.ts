@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 //import { Observable } from 'rxjs/Observable';
 
-//import { DataService } from '../core/services/data.service';
+import { DataService } from '../core/services/data.service';
 import { IEmployee } from '../shared/interfaces';
 import { propertyResolver } from '../shared/property-resolver';
 import { Http } from '@angular/http';
@@ -10,7 +10,8 @@ import { Http } from '@angular/http';
 @Component({ 
   //moduleId: module.id,
   selector: 'employees', 
-  template: require('./employees.component.html')
+  template: require('./employees.component.html'),
+  styles: [require('./employees.styles.css')]
 })
 export class EmployeesComponent implements OnInit {
 
@@ -21,10 +22,7 @@ export class EmployeesComponent implements OnInit {
   displayMode: DisplayModeEnum;
   displayModeEnum = DisplayModeEnum;
 
-  constructor(http: Http) {
-      http.get('/api/employees').subscribe(result => {
-          this.employees = result.json();
-      });    
+  constructor(private dataService: DataService) {    
    }
   
   ngOnInit() {
@@ -32,14 +30,11 @@ export class EmployeesComponent implements OnInit {
     this.filterText = 'Filter Employees:';
     this.displayMode = DisplayModeEnum.Card;
 
-
-
-    /*
     this.dataService.getEmployees()
         .subscribe((employees: IEmployee[]) => {
           this.employees = this.filteredEmployees = employees;
         });
-    */
+    
   }
 
   changeDisplayMode(mode: DisplayModeEnum) {

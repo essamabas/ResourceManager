@@ -8,18 +8,18 @@ using Microsoft.AspNetCore.Mvc;
 namespace ResourceManager.Controllers
 {
     [Route("api/[controller]")]
-    public class EmployeesDataController : Controller
+    public class EmployeesController : Controller
     {
       Employee[] employees = new Employee[]{
          new Employee { ID = 1, firstName = "Mark", 
-            lastName = "Mark",gender = "",address="", city="",orderTotal = 30 },
+            lastName = "Mark",gender = "male",address="", city="",orderTotal = 30 },
          new Employee { ID = 2, firstName = "Allan", 
-            lastName = "Mark",gender = "",address="", city="",orderTotal = 30 },
+            lastName = "Mark",gender = "male",address="", city="",orderTotal = 30 },
          new Employee { ID = 3, firstName = "Johny", 
-            lastName = "Mark",gender = "",address="", city="",orderTotal = 30 },
+            lastName = "Mark",gender = "female",address="", city="",orderTotal = 30 },
       };
 
-        [HttpGet("[action]")]
+        [HttpGet]
         public IEnumerable<Employee> GetAllEmployees()
         {
             return employees;

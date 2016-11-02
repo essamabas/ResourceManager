@@ -19,11 +19,7 @@ export class EmployeeEditComponent implements OnInit {
     lastName: '',
     gender: '',
     address: '',
-    city: '',
-    state: {
-        abbreviation: '',
-        name: ''
-    }
+    city: ''
   };
   states: IState[];
   errorMessage: string;
