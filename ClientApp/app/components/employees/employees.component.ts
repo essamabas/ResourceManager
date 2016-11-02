@@ -11,7 +11,8 @@ import { Http } from '@angular/http';
   //moduleId: module.id,
   selector: 'employees', 
   template: require('./employees.component.html'),
-  styles: [require('./employees.styles.css')]
+  styles: [require('./employees.component.css')]
+  //styleUrls: ['./employees.styles.css']
 })
 export class EmployeesComponent implements OnInit {
 
