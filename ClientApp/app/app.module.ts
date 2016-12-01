@@ -9,6 +9,7 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 
 import { CounterComponent } from './components/counter/counter.component';
 import { EmployeesModule } from './components/employees/employees.module';
+import { EmployeeModule } from './components/employee/employee.module';
 import { CoreModule } from './components/core/core.module';
 import { SharedModule } from './components/shared/shared.module';
 import { app_routing } from './app.routing';
@@ -27,6 +28,7 @@ import {SampleModule} from './components/sample/sample.module';
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
         app_routing,
         EmployeesModule,
+        EmployeeModule,
         CoreModule,
         SharedModule,
         SampleModule

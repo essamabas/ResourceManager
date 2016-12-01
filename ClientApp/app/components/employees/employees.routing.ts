@@ -8,7 +8,7 @@ import { IRouting } from '../shared/interfaces';
 
 const routes: Routes = [
   //{ path: '', pathMatch:'full', redirectTo: '/employees' },
-  { path: 'employees', component: EmployeesComponent}
+  { path: 'employees', component: EmployeesComponent},
 ];
 
 export const employeesRouting: IRouting = {
