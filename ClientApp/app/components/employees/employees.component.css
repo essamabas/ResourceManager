@@ -1,4 +1,10 @@
+.white {
+    color: white;
+}
 
+.white:hover{
+    color: white;
+}
 
 .card-container {
     width:85%;

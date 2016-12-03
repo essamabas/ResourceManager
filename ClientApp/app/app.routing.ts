@@ -8,8 +8,9 @@ const app_routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'counter', component: CounterComponent },
-  { path: 'fetch-data', component: FetchDataComponent }
-  //{ path: 'employees/:id', loadChildren: 'app/components/employee/employee.module#EmployeeModule'}
+  { path: 'fetch-data', component: FetchDataComponent },
+  //{ path: 'employees/:id', loadChildren: require('./employee/employee.module#EmployeeModule')}
+  //{ path: 'employees/:id', loadChildren: () => require("./employee/employee.module.ts")("EmployeeModule")}
 ];
 
 export const app_routing = 

@@ -8,7 +8,7 @@ import { IRouting } from '../shared/interfaces';
 
 const routes: Routes = [
   { 
-    path: '', 
+    path: 'employees/:id', 
     component: EmployeeComponent,
     children: [
       { path:'tasks',  component: EmployeeTasksComponent },

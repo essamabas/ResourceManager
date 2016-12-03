@@ -6,7 +6,6 @@ import { DataService } from '../core/services/data.service';
 import { IEmployee, ITask, ITaskItem } from '../shared/interfaces';
 
 @Component({
-  moduleId: module.id,
   selector: 'employee-tasks',
   templateUrl: 'employee-tasks.component.html'
 })

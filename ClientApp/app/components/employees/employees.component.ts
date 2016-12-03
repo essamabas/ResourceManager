@@ -10,8 +10,8 @@ import { Http } from '@angular/http';
 @Component({ 
   //moduleId: module.id,
   selector: 'employees', 
-  template: require('./employees.component.html'),
-  styles: [require('./employees.component.css')]
+  template: require('./employees.component.html')
+  //styles: [require('./employees.component.css')]
 })
 export class EmployeesComponent implements OnInit {
 

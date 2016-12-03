@@ -6,7 +6,6 @@ import { DataService } from '../core/services/data.service';
 import { IEmployee, IState } from '../shared/interfaces';
 
 @Component({
-  moduleId: module.id,
   selector: 'employee-edit',
   templateUrl: 'employee-edit.component.html'
 })

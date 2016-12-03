@@ -7,7 +7,8 @@ export class Hero {
 }
 @Component({
   selector: 'sample-cp',
-  template: require('./sample.component.html')
+  template: require('./sample.component.html'),
+  styleUrls: ['./sample.component.css']
 })
 export class SampleComponent implements OnInit {
     

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ResourceManager.Controllers
+namespace ResourceManager2.Controllers
 {
     [Route("api/[controller]")]
     public class SampleDataController : Controller
@@ -36,7 +36,7 @@ namespace ResourceManager.Controllers
             {
                 get
                 {
-                    return 32 + (int)(this.TemperatureC / 0.5556);
+                    return 32 + (int)(TemperatureC / 0.5556);
                 }
             }
         }
