@@ -25,7 +25,8 @@ export interface ITaskItem {
     id: number;
     title: string;
     description?: string;
-    duration: number;
+    dueDate?: Date
+    duration?: number;
 }
 
 export interface IRouting {

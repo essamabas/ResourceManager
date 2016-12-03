@@ -7,7 +7,8 @@ import { DataService } from '../core/services/data.service';
 
 @Component({
   selector: 'employee-details',
-  templateUrl: 'employee-details.component.html'
+  templateUrl: 'employee-details.component.html',
+  styles: ['.card-image {height:50px;width:50px;margin-top:10px;}']
 })
 export class EmployeeDetailsComponent implements OnInit {
 

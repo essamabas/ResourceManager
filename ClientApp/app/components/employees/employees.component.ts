@@ -45,7 +45,7 @@ export class EmployeesComponent implements OnInit {
   filterChanged(data: string) {
     if (data && this.employees) {
         data = data.toUpperCase();
-        let props = ['firstName', 'lastName', 'address', 'city', 'state.name', 'taskTotal'];
+        let props = ['firstName', 'lastName', 'address', 'city', 'taskTotal'];
         let filtered = this.employees.filter(item => {
             let match = false;
             for (let prop of props) {

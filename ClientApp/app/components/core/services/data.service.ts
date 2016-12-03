@@ -13,8 +13,8 @@ import { IEmployee, ITask, IState } from '../../shared/interfaces';
 @Injectable()
 export class DataService {
   
-    employeesBaseUrl: string = '/api/employees';
-    tasksBaseUrl: string = '/api/tasks';
+    employeesBaseUrl: string = '/api/employee';
+    tasksBaseUrl: string = '/api/task';
     employees: IEmployee[];
     tasks: ITask[];
     states: IState[];

@@ -25,13 +25,13 @@ import {SampleModule} from './components/sample/sample.module';
         HomeComponent
     ],
     imports: [
-        UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
         app_routing,
         EmployeesModule,
         EmployeeModule,
         CoreModule,
         SharedModule,
-        SampleModule
+        SampleModule,
+        UniversalModule // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.        
     ]
 })
 export class AppModule {
