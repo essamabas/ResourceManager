@@ -7,7 +7,8 @@ import { IEmployee, IState } from '../shared/interfaces';
 
 @Component({
   selector: 'employee-edit',
-  templateUrl: 'employee-edit.component.html'
+  templateUrl: 'employee-edit.component.html',
+  styles: [require('./employee.component.css')]
 })
 export class EmployeeEditComponent implements OnInit {
 
