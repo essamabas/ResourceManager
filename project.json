@@ -75,6 +75,6 @@
   },
 
   "tooling": {
-    "defaultNamespace": "ResourceManager2"
+    "defaultNamespace": "ResourceManager"
   }
 }

@@ -20,7 +20,6 @@ export class EmployeeDetailsComponent implements OnInit {
   ngOnInit() {
       //Subscribe to params so if it changes we pick it up. Don't technically need that here
       //since param won't be changing while component is alive. Could use this.route.snapshot.parent.params["id"] to simplify it.
-      console.log("Employee Details is called ");
       this.sub = this.route.parent.params.subscribe(params => {
         let id = +params['id'];
         this.dataService.getEmployee(id)

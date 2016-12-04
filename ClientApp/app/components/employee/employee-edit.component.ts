@@ -40,7 +40,7 @@ export class EmployeeEditComponent implements OnInit {
         });
       });
 
-      this.dataService.getStates().subscribe((states: IState[]) => this.states = states);
+      //this.dataService.getStates().subscribe((states: IState[]) => this.states = states);
   }
 
   ngOnDestroy() {

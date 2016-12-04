@@ -36,6 +36,36 @@ namespace ResourceManager.Controllers
             return Ok(employee);
         }
 
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, [FromBody] Employee item)
+        {
+            if (item == null || item.ID != id)
+            {
+                return BadRequest();
+            }
+
+            var index = employees.IndexOf(item);
+            if (index != -1) {
+                return NotFound();
+            }
+            // update Item
+            employees[index] = item;
+            //employees.Update(item);
+            return Ok();
+        }
+
+        [HttpPost]
+        public IActionResult Create([FromBody] Employee item)
+        {
+            if (item == null)
+            {
+                return BadRequest();
+            }
+            employees.Add(item);
+            //return CreatedAtRoute("GetTodo", new { id = item.ID }, item);
+            return Ok();
+        }
+
         //delete
         [HttpDelete("{id}", Name = "DeleteEmployee")]
         public IActionResult DeleteEmployee(int id)
